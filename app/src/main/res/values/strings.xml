@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">School Utility</string>
+    <string name="tvAppName">School Utility</string>
+    <string name="tvOptions">Select options from below: </string>
+    <string name="bMidDayMeal">Mid Day Meal</string>
+    <string name="tvMidDayMeal">Enter details below: </string>
+    <string name="tvCode">Code: </string>
+    <string name="tvCode_KARMDM">KARMDM</string>
+    <string name="tvDate">Date: </string>
+    <string name="tvStaffCount">Staff Count: </string>
+    <string name="tvStudentsCount">Students Strength: </string>
+    <string name="tvStudentsCountTitle">Enter Students Strength below:</string>
+    <string name="tvClass1">Class 1: </string>
+    <string name="tvClass2">Class 2: </string>
+    <string name="tvClass3">Class 3: </string>
+    <string name="tvClass4">Class 4: </string>
+    <string name="tvClass5">Class 5: </string>
+    <string name="tvClass6">Class 6: </string>
+    <string name="tvClass7">Class 7: </string>
+    <string name="tvClass8">Class 8: </string>
+    <string name="tvClass9">Class 9: </string>
+    <string name="tvClass10">Class 10: </string>
+    <string name="tvReceiverNumber">To: </string>
+    <string name="bSend">Send</string>
+    <string name="bPreview">Preview Message</string>
+    <string name="bEnter">Enter</string>
+    <string name="bDone">Done</string>
+    <string name="etClassStrengthHintValue">0</string>
+</resources>

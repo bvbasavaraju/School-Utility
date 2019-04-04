@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvStudentsCountTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/tvStudentsCountTitle"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvClass1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/tvClass1"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvStudentsCountTitle" />
+
+        <TextView
+            android:id="@+id/tvClass2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/tvClass2"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvClass1" />
+
+        <TextView
+            android:id="@+id/tvClass3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/tvClass3"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvClass2" />
+
+        <TextView
+            android:id="@+id/tvClass4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/tvClass4"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvClass3" />
+
+        <TextView
+            android:id="@+id/tvClass5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/tvClass5"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvClass4" />
+
+        <TextView
+            android:id="@+id/tvClass6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/tvClass6"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvClass5" />
+
+        <TextView
+            android:id="@+id/tvClass7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/tvClass7"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvClass6" />
+
+        <TextView
+            android:id="@+id/tvClass8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/tvClass8"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvClass7" />
+
+        <TextView
+            android:id="@+id/tvClass9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/tvClass9"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvClass8" />
+
+        <TextView
+            android:id="@+id/tvClass10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/tvClass10"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvClass9" />
+
+        <Button
+            android:id="@+id/bDone"
+            android:layout_width="91dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="500dp"
+            android:text="@string/bDone"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toEndOf="@+id/etClass10"
+            app:layout_constraintTop_toBottomOf="@+id/tvStudentsCountTitle" />
+
+        <EditText
+            android:id="@+id/etClass1"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:hint="@string/etClassStrengthHintValue"
+            android:inputType="numberDecimal"
+            app:layout_constraintStart_toEndOf="@+id/tvClass1"
+            app:layout_constraintTop_toBottomOf="@+id/tvStudentsCountTitle" />
+
+        <EditText
+            android:id="@+id/etClass2"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:hint="@string/etClassStrengthHintValue"
+            android:inputType="numberDecimal"
+            app:layout_constraintStart_toEndOf="@+id/tvClass2"
+            app:layout_constraintTop_toBottomOf="@+id/etClass1" />
+
+        <EditText
+            android:id="@+id/etClass3"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:hint="@string/etClassStrengthHintValue"
+            android:inputType="numberDecimal"
+            app:layout_constraintStart_toEndOf="@+id/tvClass3"
+            app:layout_constraintTop_toBottomOf="@+id/etClass2" />
+
+        <EditText
+            android:id="@+id/etClass4"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:hint="@string/etClassStrengthHintValue"
+            android:inputType="numberDecimal"
+            app:layout_constraintStart_toEndOf="@+id/tvClass4"
+            app:layout_constraintTop_toBottomOf="@+id/etClass3" />
+
+        <EditText
+            android:id="@+id/etClass5"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:hint="@string/etClassStrengthHintValue"
+            android:inputType="numberDecimal"
+            app:layout_constraintStart_toEndOf="@+id/tvClass5"
+            app:layout_constraintTop_toBottomOf="@+id/etClass4" />
+
+        <EditText
+            android:id="@+id/etClass6"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:hint="@string/etClassStrengthHintValue"
+            android:inputType="numberDecimal"
+            app:layout_constraintStart_toEndOf="@+id/tvClass6"
+            app:layout_constraintTop_toBottomOf="@+id/etClass5" />
+
+        <EditText
+            android:id="@+id/etClass7"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:hint="@string/etClassStrengthHintValue"
+            android:inputType="numberDecimal"
+            app:layout_constraintStart_toEndOf="@+id/tvClass7"
+            app:layout_constraintTop_toBottomOf="@+id/etClass6" />
+
+        <EditText
+            android:id="@+id/etClass8"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:hint="@string/etClassStrengthHintValue"
+            android:inputType="numberDecimal"
+            app:layout_constraintStart_toEndOf="@+id/tvClass8"
+            app:layout_constraintTop_toBottomOf="@+id/etClass7" />
+
+        <EditText
+            android:id="@+id/etClass9"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:hint="@string/etClassStrengthHintValue"
+            android:inputType="numberDecimal"
+            app:layout_constraintStart_toEndOf="@+id/tvClass9"
+            app:layout_constraintTop_toBottomOf="@+id/etClass8" />
+
+        <EditText
+            android:id="@+id/etClass10"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:hint="@string/etClassStrengthHintValue"
+            android:inputType="numberDecimal"
+            app:layout_constraintStart_toEndOf="@+id/tvClass10"
+            app:layout_constraintTop_toBottomOf="@+id/etClass9" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>
