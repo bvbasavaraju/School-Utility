@@ -1,7 +1,12 @@
 # School-Utility
+----------------
 Anything that School need for better administration or teaching students with the help of android application can be added here!
 
 Note: Anyone feel like adding ay feautre please create pull request.
+
+April 25, 2019:
+--------------
+NOTE: As of now this works with Default Sim in case of dual sim support. So, user need to update default SMS sim in case of 2 Sims.
 
 April 4, 2019:
 -------------

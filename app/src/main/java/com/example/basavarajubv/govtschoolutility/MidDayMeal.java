@@ -1,6 +1,7 @@
 package com.example.basavarajubv.govtschoolutility;
 
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,11 +17,16 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+
+//NOTE: As of now this works with Default Sim in case of dual sim support. So, user need to update default SMS sim in case of 2 Sims.
+//      This will be updated in future.
+
 public class MidDayMeal extends AppCompatActivity
 {
   private static final String comma = ",";
   private String msgToSend = "";
-  private String studentStrength = "";
+  private String studentStrength = "0,0,0,0,0,0,0,0,0,0";
+  //private String senderNumber = ""; //TODO - may need to work on this!
 
   private boolean msgReadyToSend = false;
   private boolean permissionToSendMsg = false;
@@ -29,6 +35,7 @@ public class MidDayMeal extends AppCompatActivity
   String formattedDate;
   private EditText etCode;
   private EditText etStaffCount;
+
   @Override
   protected void onCreate(Bundle savedInstanceState)
   {
@@ -111,29 +118,13 @@ public class MidDayMeal extends AppCompatActivity
       msgReadyToSend = false;
       ShowAlertDialog("Staff count Cannot be Negative. Please enter the correct value");
     }
-    else
-    {
-      if(!staffCountStr.isEmpty())
-      {
-        msgToSend += staffCountStr + comma;
-      }
-      else
-      {
-        msgReadyToSend = false;
-      }
-    }
 
-    if(!staffCountStr.isEmpty())
+    msgToSend += (staffCountStr.isEmpty() ? "0" : staffCountStr) + comma;
+    msgToSend += studentStrength + comma;
+
+    if(staffCountStr.isEmpty() || studentStrength.isEmpty())
     {
-      //Student Strength
-      if (!studentStrength.isEmpty())
-      {
-        msgToSend += studentStrength;
-      }
-      else
-      {
-        msgReadyToSend = false;
-      }
+      msgReadyToSend = false;
     }
   }
 
@@ -183,6 +174,31 @@ public class MidDayMeal extends AppCompatActivity
       .setNegativeButton("No", dialogClickListener).show();
   }
 
+  //TODO: Complete this!
+//  protected void GetSenderNumber()
+//  {
+//    SubscriptionManager subscriptionManager = this.getSystemService(SubscriptionManager.class);
+//    List<SubscriptionInfo> subsInfo = subscriptionManager.getAccessibleSubscriptionInfoList();
+//
+//    switch (subsInfo.size())
+//    {
+//      case 0:
+//        //TODO : REPORT ERROR
+//        break;
+//
+//      case 1:
+//          senderNumber = subsInfo.get(0).getNumber();
+//        break;
+//
+//      default:
+//        {
+//          int subsId = subsInfo.get(0)
+//        }
+//        break;
+//    }
+//
+//  }
+
   protected void SendTheMessage()
   {
     if(!permissionToSendMsg)
@@ -195,6 +211,9 @@ public class MidDayMeal extends AppCompatActivity
       ShowAlertDialog("Permission to Read Phone State is not granted! Make sure to provide permission");
       return;
     }
+
+    //TODO: Get the Default sim numbers!!
+    //GetSenderNumber();
 
     //Phone Number
     EditText etPhoneNumber = (EditText) findViewById(R.id.etPhoneNumber);
