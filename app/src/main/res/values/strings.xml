@@ -26,4 +26,8 @@
     <string name="bEnter">Enter</string>
     <string name="bDone">Done</string>
     <string name="etClassStrengthHintValue">0</string>
+    <string name="studentName">StudentName</string>
+    <string name="studentId">StudentId</string>
+    <string name="gender">Gender</string>
+    <string name="todo">TODO</string>
 </resources>

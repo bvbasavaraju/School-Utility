@@ -251,7 +251,7 @@ public class MidDayMeal extends AppCompatActivity
     String strength = data.getStringExtra(StudentsStrengths.KEY_STRENGTH);
     studentStrength = strength;
 
-    //Update Student strength
+    //Update com.example.basavarajubv.govtschoolutility.Student_t strength
     TextView tvStudentStrenthEntered = (TextView) findViewById(R.id.tvStudentStrenthEntered);
     tvStudentStrenthEntered.setText(studentStrength);
   }

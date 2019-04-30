@@ -4,6 +4,11 @@ Anything that School need for better administration or teaching students with th
 
 Note: Anyone feel like adding ay feautre please create pull request.
 
+April 30, 2019:
+--------------
+Added the RecyclerView to display the students information in either in List (student_card_view_landscape) or Grid (student_card_view_portrait) format. 
+Need to test yet!!
+
 April 25, 2019:
 --------------
 NOTE: As of now this works with Default Sim in case of dual sim support. So, user need to update default SMS sim in case of 2 Sims.
