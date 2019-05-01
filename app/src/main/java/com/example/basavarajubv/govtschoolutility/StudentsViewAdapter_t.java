@@ -1,6 +1,7 @@
 package com.example.basavarajubv.govtschoolutility;
 
 import android.content.Context;
+import android.graphics.Rect;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -26,12 +27,36 @@ public class StudentsViewAdapter_t extends RecyclerView.Adapter<StudentsViewAdap
   private Context context;
   private List<Student_t> students;
   private boolean listView;
+  private boolean showAttendence;
+  private boolean showMarks;
 
   public StudentsViewAdapter_t(Context context_, List<Student_t> students_, boolean listView_)
   {
     context = context_;
     students = students_;
     listView = listView_;
+    showAttendence = false;
+    showMarks = false;
+  }
+
+  public boolean isShowAttendence()
+  {
+    return showAttendence;
+  }
+
+  public void setShowAttendence(boolean showAttendence)
+  {
+    this.showAttendence = showAttendence;
+  }
+
+  public boolean isShowMarks()
+  {
+    return showMarks;
+  }
+
+  public void setShowMarks(boolean showMarks)
+  {
+    this.showMarks = showMarks;
   }
 
   @NonNull
@@ -56,25 +81,31 @@ public class StudentsViewAdapter_t extends RecyclerView.Adapter<StudentsViewAdap
   @Override
   public void onBindViewHolder(@NonNull StudentCardViewHolder_t studentCardViewHolder, int position)
   {
-    //TODO : May need to selectively set the required fields based on the listView value
     studentCardViewHolder.studentPic.setImageResource(students.get(position).getPicture());
-    studentCardViewHolder.studentName.setText(students.get(position).getName());
-    studentCardViewHolder.studentGender.setText(students.get(position).getGender());
 
+    String studentId = "Id: " + students.get(position).getId();
+    studentCardViewHolder.studentId.setText(studentId);
+
+
+    String gender = students.get(position).getGender().toUpperCase();
+    String additionalInfo = gender;
     if(listView)
     {
-      String studentId = "Id : " + students.get(position).getId();
-      studentCardViewHolder.studentId.setText(studentId);
+      studentCardViewHolder.studentName.setText(students.get(position).getName());
+      studentCardViewHolder.studentGender.setText("Gender: " + gender + " ,");
+      additionalInfo = "Class: " + students.get(position).getWhichClass() + students.get(position).getWhichSectoin();
     }
-    else
+
+    if(showMarks)
     {
-      studentCardViewHolder.studentId.setText(students.get(position).getId());
+      additionalInfo = students.get(position).getLatestExamMarks() + "/" + students.get(position).getMaxScore();
+    }
+    else if(showAttendence)
+    {
+      additionalInfo = "" + students.get(position).isPresent();
     }
 
-    String scoreInLatestExam_ = students.get(position).getLatestExamMarks() + "/" + students.get(position).getMaxScore();
-    studentCardViewHolder.scoreInTestOrExam.setText(scoreInLatestExam_);
-
-    studentCardViewHolder.attendance.setText(students.get(position).isPresent());
+    studentCardViewHolder.additionalInfo.setText(additionalInfo);
   }
 
   @Override
@@ -89,8 +120,7 @@ public class StudentsViewAdapter_t extends RecyclerView.Adapter<StudentsViewAdap
     TextView studentName;
     TextView studentGender;
     TextView studentId;
-    TextView scoreInTestOrExam;
-    TextView attendance;
+    TextView additionalInfo;
 
     public StudentCardViewHolder_t(@NonNull View itemView, boolean listView)
     {
@@ -104,15 +134,13 @@ public class StudentsViewAdapter_t extends RecyclerView.Adapter<StudentsViewAdap
         studentName = (TextView)itemView.findViewById(R.id.cardViewLandscapeStudentName);
         studentGender = (TextView)itemView.findViewById(R.id.cardViewLandscapeGender);
         studentId = (TextView)itemView.findViewById(R.id.cardViewLandscapeStudentId);
-        scoreInTestOrExam = (TextView) itemView.findViewById(R.id.cardViewLandscapeLastField);
-        attendance = (TextView) itemView.findViewById(R.id.cardViewLandscapeLastField);
+        additionalInfo = (TextView) itemView.findViewById(R.id.cardViewLandscapeLastField);
       }
       else
       {
         studentPic = (ImageView)itemView.findViewById(R.id.cardViewPortraitStudentPic);
         studentId = (TextView)itemView.findViewById(R.id.cardViewPortraitStudentId);
-        scoreInTestOrExam = (TextView) itemView.findViewById(R.id.cardViewPortraitSecondField);
-        attendance = (TextView) itemView.findViewById(R.id.cardViewPortraitSecondField);
+        additionalInfo = (TextView) itemView.findViewById(R.id.cardViewPortraitSecondField);
       }
     }
   }

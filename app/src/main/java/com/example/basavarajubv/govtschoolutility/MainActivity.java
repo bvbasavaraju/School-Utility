@@ -9,9 +9,14 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -40,6 +45,16 @@ public class MainActivity extends AppCompatActivity
       public void onClick(View v)
       {
         MoveToMidDayMealActivity();
+      }
+    });
+
+    Button studentsView = (Button) findViewById(R.id.studentsViewButton);
+    studentsView.setOnClickListener(new View.OnClickListener()
+    {
+      @Override
+      public void onClick(View v)
+      {
+        MoveToStudentsView(false, false);
       }
     });
   }
@@ -89,6 +104,55 @@ public class MainActivity extends AppCompatActivity
     intent.putExtra(KEY_SEND_MSG_PERMISSION, permissionToSendMsg);
     intent.putExtra(KEY_READ_PHONE_STATE_PERMISSION, permissionToReadPhoneState);
     startActivityForResult(intent, 1);
+  }
+
+  protected void MoveToStudentsView(boolean showAttendance, boolean showMarks)
+  {
+    if(showAttendance && showMarks)
+    {
+      //TODO: log an warning!
+    }
+
+    //TODO : These list of students should be retrieved from the Class and Section that user selected!
+    List<Student_t> students = new ArrayList<>();
+    students.add(new Student_t("Akash", "male", 1, 1));
+    students.add(new Student_t("Anirudh", "male", 2, 2));
+    students.add(new Student_t("Bhandhu", "male", 3, 3));
+    students.add(new Student_t("Chandru", "male", 4, 4));
+    students.add(new Student_t("Dinesh", "male", 5, 5));
+    students.add(new Student_t("Ejaz", "male", 6, 6));
+    students.add(new Student_t("Farooq", "male", 7, 7));
+    students.add(new Student_t("Govinda", "male", 8, 8));
+    students.add(new Student_t("Hruthik", "male", 9, 9));
+    students.add(new Student_t("Indra", "male", 10, 10));
+
+    students.add(new Student_t("Anitha", "female", 11, 1));
+    students.add(new Student_t("Bindya", "female", 12, 2));
+    students.add(new Student_t("Chummi", "female", 13, 3));
+    students.add(new Student_t("Deepa", "female", 14, 4));
+    students.add(new Student_t("Emi", "female", 15, 5));
+    students.add(new Student_t("Fida", "female", 16, 6));
+    students.add(new Student_t("Geetha", "female", 17, 7));
+    students.add(new Student_t("Hema", "female", 18, 8));
+    students.add(new Student_t("Indrani", "female", 19, 9));
+    students.add(new Student_t("Jyoti", "female", 20, 10));
+
+    //TODO: As of now it is hard coded, This should be given an option in Application Settings
+    boolean listView = true;
+    int numOfColumns = (listView) ? 1 : 3;
+
+    StudentsViewAdapter_t studentsViewHolder = new StudentsViewAdapter_t(this, students, listView);
+    studentsViewHolder.setShowAttendence(showAttendance);
+    studentsViewHolder.setShowMarks(showMarks);
+
+    //Here, setting view to "activity_students_view" is necessary. without that "findViewById" will result in crash
+    setContentView(R.layout.activity_students_view);
+    RecyclerView studentsView = (RecyclerView) findViewById(R.id.studentsView);
+
+    GridLayoutManager gridLayoutManager = new GridLayoutManager(this, numOfColumns);
+    studentsView.setLayoutManager(gridLayoutManager);
+
+    studentsView.setAdapter(studentsViewHolder);
   }
 
   @Override

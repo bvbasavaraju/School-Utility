@@ -3,6 +3,7 @@
     <string name="tvAppName">School Utility</string>
     <string name="tvOptions">Select options from below: </string>
     <string name="bMidDayMeal">Mid Day Meal</string>
+    <string name="studentsViewButton">Students View</string>
     <string name="tvMidDayMeal">Enter details below: </string>
     <string name="tvCode">Code: </string>
     <string name="tvCode_KARMDM">KARMDM</string>

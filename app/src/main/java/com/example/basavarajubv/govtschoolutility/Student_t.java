@@ -14,11 +14,25 @@ public class Student_t
   private int picture;
 
   private Date dateOfJoining;
-  private int id;
+  private int id;   //TODO : Check for uniqueness of ID!
+  private int whichClass;
+  private char whichSectoin;
   private int present;
 
   private ContactInformation_t contactDetails;
   private List<Subject_t> subjects;
+
+  private List<String> sports;
+  private List<String> culturalActivities;
+  private List<String> otherActivites;
+
+  public Student_t(String name_, String gender_, int id_, int whichClass_)
+  {
+    this.name = name_;
+    this.gender = gender_;
+    this.id = id_;
+    this.whichClass = whichClass_;
+  }
 
   public String getName()
   {
@@ -110,6 +124,26 @@ public class Student_t
     this.id = id;
   }
 
+  public int getWhichClass()
+  {
+    return whichClass;
+  }
+
+  public void setWhichClass(int whichClass)
+  {
+    this.whichClass = whichClass;
+  }
+
+  public char getWhichSectoin()
+  {
+    return whichSectoin;
+  }
+
+  public void setWhichSectoin(char whichSectoin)
+  {
+    this.whichSectoin = whichSectoin;
+  }
+
   public int isPresent()
   {
     return present;
@@ -123,6 +157,11 @@ public class Student_t
   public int getLatestExamMarks()
   {
     int retVal = 0;
+    if(subjects == null)
+    {
+      return retVal;
+    }
+
     for (Subject_t sub : subjects)
     {
       retVal += sub.getScore();
@@ -134,6 +173,11 @@ public class Student_t
   public int getMaxScore()
   {
     int retVal = 0;
+    if(subjects == null)
+    {
+      return retVal;
+    }
+
     for (Subject_t sub : subjects)
     {
       retVal += sub.getMAXIMUM_MARKS();
