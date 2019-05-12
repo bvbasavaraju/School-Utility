@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.basavarajubv.govtschoolutility">
 
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,6 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".StudentProfileView"
+            android:label="@string/title_activity_student_profile_view"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,15 +24,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".MidDayMeal"
+        <activity
+            android:name=".MidDayMeal"
             android:label="Mid Day Meal"
-            android:parentActivityName= ".MainActivity"/>
-
-        <activity android:name=".StudentsStrengths"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".StudentsStrengths"
             android:label="Student Strengths"
-            android:parentActivityName= ".MidDayMeal"/>
+            android:parentActivityName=".MidDayMeal" />
     </application>
-    <uses-permission android:name="android.permission.SEND_SMS"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
 </manifest>

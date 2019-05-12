@@ -1,11 +1,16 @@
 package com.example.basavarajubv.govtschoolutility;
 
-public class Subject_t
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Subject_t implements Parcelable
 {
   private String name;
   private int score;
   private int passingScore;
   private int MAXIMUM_MARKS = 100;
+
+  public Subject_t() {}
 
   public Subject_t(String name_)
   {
@@ -27,6 +32,41 @@ public class Subject_t
     score = -1;
     passingScore = passingScore_;
     MAXIMUM_MARKS = maxMarks_;
+  }
+
+  @Override
+  public int describeContents()
+  {
+    return 0;
+  }
+
+  @Override
+  public void writeToParcel(Parcel dest, int flags)
+  {
+    dest.writeString(name);
+    dest.writeInt(score);
+    dest.writeInt(passingScore);
+    dest.writeInt(MAXIMUM_MARKS);
+  }
+
+  public static final Parcelable.Creator<Subject_t> CREATOR = new Parcelable.Creator<Subject_t>() {
+      public Subject_t createFromParcel(Parcel in)
+      {
+        return new Subject_t(in);
+      }
+
+      public Subject_t[] newArray(int size)
+      {
+        return new Subject_t[size];
+      }
+  };
+
+  private Subject_t(Parcel in)
+  {
+    name = in.readString();
+    score = in.readInt();
+    passingScore = in.readInt();
+    MAXIMUM_MARKS = in.readInt();
   }
 
   public String getName()

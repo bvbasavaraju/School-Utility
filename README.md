@@ -4,6 +4,10 @@ Anything that School need for better administration or teaching students with th
 
 Note: Anyone feel like adding ay feautre please create pull request.
 
+May 12, 2019:
+------------
+Student Profile view has been added. WIP
+
 May 1, 2019:
 -----------
 For Dummy list of students, representation of students in List or grid view has been implemented.

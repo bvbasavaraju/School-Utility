@@ -10,16 +10,20 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity
 {
+  public static final String REQUEST_ID_STUDENT_OBJECT = "studentObject";
   private final int REQUEST_ID_SEND_MSG_PERMISSION = 1;
   private final int REQUEST_ID_READ_PHONE_STATE_PERMISSION = 2;
   private boolean permissionToSendMsg = false;
@@ -54,7 +58,17 @@ public class MainActivity extends AppCompatActivity
       @Override
       public void onClick(View v)
       {
-        MoveToStudentsView(false, false);
+        MoveToStudentsView(false, false, true);
+      }
+    });
+
+    Button classesView = (Button) findViewById(R.id.classesViewButton);
+    classesView.setOnClickListener(new View.OnClickListener()
+    {
+      @Override
+      public void onClick(View v)
+      {
+        MoveToClassesView();
       }
     });
   }
@@ -106,7 +120,14 @@ public class MainActivity extends AppCompatActivity
     startActivityForResult(intent, 1);
   }
 
-  protected void MoveToStudentsView(boolean showAttendance, boolean showMarks)
+  protected void MoveToStudentProfileView(Student_t student_)
+  {
+    Intent intent = new Intent(this, StudentProfileView.class);
+    intent.putExtra(REQUEST_ID_STUDENT_OBJECT, student_);
+    startActivityForResult(intent, 1);
+  }
+
+  protected void MoveToStudentsView(boolean showAttendance, boolean showMarks, boolean listView)
   {
     if(showAttendance && showMarks)
     {
@@ -138,21 +159,58 @@ public class MainActivity extends AppCompatActivity
     students.add(new Student_t("Jyoti", "female", 20, 10));
 
     //TODO: As of now it is hard coded, This should be given an option in Application Settings
-    boolean listView = true;
     int numOfColumns = (listView) ? 1 : 3;
 
-    StudentsViewAdapter_t studentsViewHolder = new StudentsViewAdapter_t(this, students, listView);
-    studentsViewHolder.setShowAttendence(showAttendance);
-    studentsViewHolder.setShowMarks(showMarks);
+    StudentsRecyclerViewAdapter_t studentsViewHolderAdapter = new StudentsRecyclerViewAdapter_t(this, students, listView);
+    studentsViewHolderAdapter.setShowAttendance(showAttendance);
+    studentsViewHolderAdapter.setShowMarks(showMarks);
+    studentsViewHolderAdapter.SetOnStudentItemClickListener(new StudentsRecyclerViewAdapter_t.OnStudentItemClickListener()
+    {
+      @Override
+      public void OnStudentItemClick(Student_t student_)
+      {
+        MoveToStudentProfileView(student_);
+      }
+    });
 
     //Here, setting view to "activity_students_view" is necessary. without that "findViewById" will result in crash
-    setContentView(R.layout.activity_students_view);
-    RecyclerView studentsView = (RecyclerView) findViewById(R.id.studentsView);
+    setContentView(R.layout.activity_recycler_view);
+    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
     GridLayoutManager gridLayoutManager = new GridLayoutManager(this, numOfColumns);
-    studentsView.setLayoutManager(gridLayoutManager);
+    recyclerView.setLayoutManager(gridLayoutManager);
+    recyclerView.setAdapter(studentsViewHolderAdapter);
+  }
 
-    studentsView.setAdapter(studentsViewHolder);
+  protected void MoveToClassesView()
+  {
+    List<Class_t> classes = new ArrayList<>();
+    classes.add(new Class_t(1));
+    classes.add(new Class_t(2));
+    classes.add(new Class_t(3));
+    classes.add(new Class_t(4));
+    classes.add(new Class_t(5));
+    classes.add(new Class_t(6));
+    classes.add(new Class_t(7));
+    classes.add(new Class_t(8));
+    classes.add(new Class_t(9));
+    classes.add(new Class_t(10));
+
+    ClassesRecyclerViewAdapter_t classesRecyclerViewAdapter = new ClassesRecyclerViewAdapter_t(this, classes);
+    classesRecyclerViewAdapter.SetOnItemClickListener(new ClassesRecyclerViewAdapter_t.OnItemClickListener()
+    {
+      @Override
+      public void OnItemClick(Class_t class_)
+      {
+        //TODO : From Class access students list!
+        MoveToStudentsView(false, false, false);
+      }
+    });
+
+    setContentView(R.layout.activity_recycler_view);
+    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+    recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
+    recyclerView.setAdapter(classesRecyclerViewAdapter);
   }
 
   @Override

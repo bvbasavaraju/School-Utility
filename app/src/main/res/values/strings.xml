@@ -31,4 +31,22 @@
     <string name="studentId">StudentId</string>
     <string name="gender">Gender</string>
     <string name="todo">TODO</string>
+    <string name="classNumber">ClassNumber</string>
+    <string name="classTeacher">ClassTeacher</string>
+    <string name="classesViewButton">Classes View</string>
+    <string name="studentProfileViewName">Student Name</string>
+    <string name="studentProfileViewClassAndSection">Class And section</string>
+    <string name="studentProfileViewId">StudentId</string>
+    <string name="studentProfileViewPresentOrAbsent">Present/Absent</string>
+    <string name="studentProfileViewDateOfJoining">Date Of Joining: </string>
+    <string name="studentProfileViewDateFormat">Date/Month/Year</string>
+    <string name="studentProfileViewMarksScored">Marks Scored: </string>
+    <string name="studentProfileViewFatherName">Father\'s Name:</string>
+    <string name="studentProfileViewMotherName">Mother\'s Name: </string>
+    <string name="studentProfileViewDOB_">Birth Date: </string>
+    <string name="studentProfileViewAge">Age: </string>
+    <string name="studentProfileViewPhoneNumber">Phone Number</string>
+    <string name="studentProfileViewEMailId">EMail Id</string>
+    <string name="studentProfileViewAddressLine1">Address Line1</string>
+    <string name="title_activity_student_profile_view">StudentProfileView</string>
 </resources>

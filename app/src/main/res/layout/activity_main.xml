@@ -69,6 +69,17 @@
             android:textColor="@android:color/black"
             android:textSize="18sp"/>
 
+        <Button
+            android:id="@+id/classesViewButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/classesViewButton"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"/>
+
     </LinearLayout>
 
 </LinearLayout>

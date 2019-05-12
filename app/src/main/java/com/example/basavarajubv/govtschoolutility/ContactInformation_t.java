@@ -6,15 +6,25 @@ public class ContactInformation_t
   private String emailAddress;
   private String address;
 
+  public ContactInformation_t()
+  {
+    this.phoneNumber = "";
+    this.emailAddress = "";
+    this.address = "";
+  }
+
   public ContactInformation_t(String phoneNumber)
   {
     this.phoneNumber = phoneNumber;
+    this.emailAddress = "";
+    this.address = "";
   }
 
   public ContactInformation_t(String phoneNumber, String emailAddress)
   {
     this.phoneNumber = phoneNumber;
     this.emailAddress = emailAddress;
+    this.address = "";
   }
 
   public ContactInformation_t(String phoneNumber, String emailAddress, String address)

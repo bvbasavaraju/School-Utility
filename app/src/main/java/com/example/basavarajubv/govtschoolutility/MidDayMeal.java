@@ -56,7 +56,7 @@ public class MidDayMeal extends AppCompatActivity
     formattedDate = dateFormat.format(date);
 
     EditText etDate = (EditText) findViewById(R.id.etDate);
-    etDate.setText(formattedDate.toString());
+    etDate.setText(formattedDate);
 
     //Staff Count
     etStaffCount = (EditText) findViewById(R.id.etStaffCount);
