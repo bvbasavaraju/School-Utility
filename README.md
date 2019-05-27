@@ -4,6 +4,10 @@ Anything that School need for better administration or teaching students with th
 
 Note: Anyone feel like adding ay feautre please create pull request.
 
+May 27, 2019:
+------------
+Optimiztion and Scrollable Student Profile view. WIP
+
 May 12, 2019:
 ------------
 Student Profile view has been added. WIP

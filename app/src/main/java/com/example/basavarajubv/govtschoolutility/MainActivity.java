@@ -52,16 +52,6 @@ public class MainActivity extends AppCompatActivity
       }
     });
 
-    Button studentsView = (Button) findViewById(R.id.studentsViewButton);
-    studentsView.setOnClickListener(new View.OnClickListener()
-    {
-      @Override
-      public void onClick(View v)
-      {
-        MoveToStudentsView(false, false, true);
-      }
-    });
-
     Button classesView = (Button) findViewById(R.id.classesViewButton);
     classesView.setOnClickListener(new View.OnClickListener()
     {
@@ -127,7 +117,7 @@ public class MainActivity extends AppCompatActivity
     startActivityForResult(intent, 1);
   }
 
-  protected void MoveToStudentsView(boolean showAttendance, boolean showMarks, boolean listView)
+  protected void MoveToStudentsView(boolean showAttendance, boolean showMarks, boolean listView, Class_t selectedClass)
   {
     if(showAttendance && showMarks)
     {
@@ -136,27 +126,27 @@ public class MainActivity extends AppCompatActivity
 
     //TODO : These list of students should be retrieved from the Class and Section that user selected!
     List<Student_t> students = new ArrayList<>();
-    students.add(new Student_t("Akash", "male", 1, 1));
-    students.add(new Student_t("Anirudh", "male", 2, 2));
-    students.add(new Student_t("Bhandhu", "male", 3, 3));
-    students.add(new Student_t("Chandru", "male", 4, 4));
-    students.add(new Student_t("Dinesh", "male", 5, 5));
-    students.add(new Student_t("Ejaz", "male", 6, 6));
-    students.add(new Student_t("Farooq", "male", 7, 7));
-    students.add(new Student_t("Govinda", "male", 8, 8));
-    students.add(new Student_t("Hruthik", "male", 9, 9));
-    students.add(new Student_t("Indra", "male", 10, 10));
+    students.add(new Student_t("Akash", "male", 1, selectedClass));
+    students.add(new Student_t("Anirudh", "male", 2, selectedClass));
+    students.add(new Student_t("Bhandhu", "male", 3, selectedClass));
+    students.add(new Student_t("Chandru", "male", 4, selectedClass));
+    students.add(new Student_t("Dinesh", "male", 5, selectedClass));
+    students.add(new Student_t("Ejaz", "male", 6, selectedClass));
+    students.add(new Student_t("Farooq", "male", 7, selectedClass));
+    students.add(new Student_t("Govinda", "male", 8, selectedClass));
+    students.add(new Student_t("Hruthik", "male", 9, selectedClass));
+    students.add(new Student_t("Indra", "male", 10, selectedClass));
 
-    students.add(new Student_t("Anitha", "female", 11, 1));
-    students.add(new Student_t("Bindya", "female", 12, 2));
-    students.add(new Student_t("Chummi", "female", 13, 3));
-    students.add(new Student_t("Deepa", "female", 14, 4));
-    students.add(new Student_t("Emi", "female", 15, 5));
-    students.add(new Student_t("Fida", "female", 16, 6));
-    students.add(new Student_t("Geetha", "female", 17, 7));
-    students.add(new Student_t("Hema", "female", 18, 8));
-    students.add(new Student_t("Indrani", "female", 19, 9));
-    students.add(new Student_t("Jyoti", "female", 20, 10));
+    students.add(new Student_t("Anitha", "female", 11, selectedClass));
+    students.add(new Student_t("Bindya", "female", 12, selectedClass));
+    students.add(new Student_t("Chummi", "female", 13, selectedClass));
+    students.add(new Student_t("Deepa", "female", 14, selectedClass));
+    students.add(new Student_t("Emi", "female", 15, selectedClass));
+    students.add(new Student_t("Fida", "female", 16, selectedClass));
+    students.add(new Student_t("Geetha", "female", 17, selectedClass));
+    students.add(new Student_t("Hema", "female", 18, selectedClass));
+    students.add(new Student_t("Indrani", "female", 19, selectedClass));
+    students.add(new Student_t("Jyoti", "female", 20, selectedClass));
 
     //TODO: As of now it is hard coded, This should be given an option in Application Settings
     int numOfColumns = (listView) ? 1 : 3;
@@ -200,10 +190,10 @@ public class MainActivity extends AppCompatActivity
     classesRecyclerViewAdapter.SetOnItemClickListener(new ClassesRecyclerViewAdapter_t.OnItemClickListener()
     {
       @Override
-      public void OnItemClick(Class_t class_)
+      public void OnItemClick(Class_t selectedClass)
       {
         //TODO : From Class access students list!
-        MoveToStudentsView(false, false, false);
+        MoveToStudentsView(false, false, true, selectedClass);
       }
     });
 

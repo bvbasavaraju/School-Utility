@@ -11,12 +11,20 @@ public class Class_t
   private Image picture;
   private Bitmap imageBitMap;
   private String classTeacher;
+
+  private List<String> subjectNames;
   private List<Student_t> students;
 
   public Class_t(int number)
   {
     this.number = number;
     classTeacher = "";
+  }
+
+  public Class_t(int number, List<String> subjectNames)
+  {
+    this.number = number;
+    this.subjectNames = subjectNames;
   }
 
   public int getNumber() { return number; }
@@ -30,6 +38,16 @@ public class Class_t
   public String getClassTeacher() { return classTeacher; }
 
   public void setClassTeacher(String classTeacher) {  this.classTeacher = classTeacher; }
+
+  public List<String> getSubjectNames()
+  {
+    return subjectNames;
+  }
+
+  public void setSubjectNames(List<String> subjectNames)
+  {
+    this.subjectNames = subjectNames;
+  }
 
   public List<Student_t> getStudents()  { return students; }
 
