@@ -49,4 +49,5 @@
     <string name="studentProfileViewEMailId">EMail Id</string>
     <string name="studentProfileViewAddressLine1">Address Line1</string>
     <string name="title_activity_student_profile_view">StudentProfileView</string>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>

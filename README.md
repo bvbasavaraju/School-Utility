@@ -4,6 +4,10 @@ Anything that School need for better administration or teaching students with th
 
 Note: Anyone feel like adding ay feautre please create pull request.
 
+May 28, 2019:
+------------
+Few tweeks in UI. Added Floating button and toolbar to StudentProfileView. WIP
+
 May 27, 2019:
 ------------
 Optimiztion and Scrollable Student Profile view. WIP

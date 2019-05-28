@@ -16,7 +16,22 @@ public class StudentProfileView extends AppCompatActivity
   protected void onCreate(Bundle savedInstanceState)
   {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.student_profile_view);
+    setContentView(R.layout.student_profile_view_addons);
+
+    Toolbar toolbar = findViewById(R.id.studentProfileViewToolbar);
+    setSupportActionBar(toolbar);
+
+    FloatingActionButton fab = findViewById(R.id.studentProfileViewFloatingButton);
+    fab.setOnClickListener(new View.OnClickListener()
+    {
+      @Override
+      public void onClick(View view)
+      {
+        //TODO: take necessary action
+        Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+          .setAction("Action", null).show();
+      }
+    });
 
     TextView name = (TextView) findViewById(R.id.studentProfileViewName);
     TextView classAndSection = (TextView) findViewById(R.id.studentProfileViewClassAndSection);
