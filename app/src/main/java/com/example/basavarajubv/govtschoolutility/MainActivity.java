@@ -10,13 +10,9 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -104,7 +100,7 @@ public class MainActivity extends AppCompatActivity
 
   protected void MoveToMidDayMealActivity()
   {
-    Intent intent = new Intent(this, MidDayMeal.class);
+    Intent intent = new Intent(this, MidDayMeal_t.class);
     intent.putExtra(KEY_SEND_MSG_PERMISSION, permissionToSendMsg);
     intent.putExtra(KEY_READ_PHONE_STATE_PERMISSION, permissionToReadPhoneState);
     startActivityForResult(intent, 1);
@@ -112,7 +108,7 @@ public class MainActivity extends AppCompatActivity
 
   protected void MoveToStudentProfileView(Student_t student_)
   {
-    Intent intent = new Intent(this, StudentProfileView.class);
+    Intent intent = new Intent(this, StudentProfileView_t.class);
     intent.putExtra(REQUEST_ID_STUDENT_OBJECT, student_);
     startActivityForResult(intent, 1);
   }

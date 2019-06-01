@@ -18,7 +18,7 @@
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".StudentProfileView"
+            android:name=".StudentProfileView_t"
             android:label="@string/title_activity_student_profile_view"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
@@ -29,13 +29,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MidDayMeal"
+            android:name=".MidDayMeal_t"
             android:label="Mid Day Meal"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".StudentsStrengths"
+            android:name=".StudentsStrengths_t"
             android:label="Student Strengths"
-            android:parentActivityName=".MidDayMeal" />
+            android:parentActivityName=".MidDayMeal_t" />
     </application>
 
 </manifest>
